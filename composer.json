@@ -1,0 +1,29 @@
+{
+  "name": "ro0nl/link",
+  "type": "composer-plugin",
+  "description": "Link dependencies to a local clone",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Roland Franssen",
+      "email": "franssen.roland@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^5.5.9|^7.0.8",
+    "composer-plugin-api": "^1.1",
+    "symfony/filesystem": "^2.7|^3.3|^4.0",
+    "symfony/finder": "^2.7|^3.3|^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "ro0NL\\Link\\": "src"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    },
+    "class": "ro0NL\\Link\\Link"
+  }
+}
