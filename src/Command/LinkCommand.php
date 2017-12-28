@@ -37,7 +37,10 @@ class LinkCommand extends BaseCommand
 
         $packages = [];
         foreach (Finder::create()->in(getcwd())->notPath('/vendor/')->name('composer.json') as $package) {
-            $packages[json_decode(file_get_contents($package))->name] = dirname((string) $package);
+            if (!($data = @json_decode(file_get_contents($package))) || !isset($data->name)) {
+                continue;
+            }
+            $packages[$data->name] = dirname((string) $package);
         }
 
         $filesystem = new Filesystem();
