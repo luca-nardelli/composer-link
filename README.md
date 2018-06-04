@@ -22,4 +22,15 @@ $ composer link /path/to/project
 
 This will find all of your Composer packages in the current directory and links dependencies in your project to it.
 
+Symfony Example
+---------------
+
+```sh
+git clone git@github.com:symfony/symfony.git symfony
+git clone git@github.com:company/symfony-project.git project
+
+cd symfony
+composer link ../project
+```
+
 Original idea by Kévin Dunglas.
